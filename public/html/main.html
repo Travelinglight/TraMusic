@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TraMusic</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+      .jumbotron {
+        position: relative;
+        background: none;
+      }
+      .jumbotron:after {
+        content:"";
+        background: url("/public/images/jumback.jpg");
+        background-size: cover;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>TraMusic</h1>
+        <p>The music box you can carry with you everywhere</p>
+      </div>
+
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#SongCnt">Song</a></li>
+        <li><a data-toggle="tab" href="#ListCnt">List</a></li>
+        <li><a data-toggle="tab" href="#RestCnt">Result</a></li>
+        <li><a data-toggle="tab" href="#PlayCnt">Play</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <h1 align=center>Cuz life is beautiful</h1>
+        </div>
+        <div id="SongCnt" class="tab-pane fade">
+          <h3>Song</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="ListCnt" class="tab-pane fade">
+          <h3>List</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="RestCnt" class="tab-pane fade">
+          <h3>Result</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="PlayCnt" class="tab-pane fade">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+              <audio controls>
+                <source src="/public/audio/hear_our_prayer.mp3" type="audio/mp3" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
