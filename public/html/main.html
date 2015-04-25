@@ -80,8 +80,57 @@
           <h4 align=center>I found my freedom now<h4>
         </div>
         <div id="TrckCnt" class="tab-pane fade">
-          <h3>Select Tracks</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h2 align=center>Select Tracks</h2>
+          <form class="form-horizontal" role="form" id="selectTrack">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="NM">Name:</label>
+              <div class="col-sm-10">
+                <input type="NM" class="form-control" id="NM" name="NM" placeholder="track name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="YR">year:</label>
+              <div class="col-sm-10">
+                <input type="YR" class="form-control" id="YR" name="YR" placeholder="publish year">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="AT">artist:</label>
+              <div class="col-sm-10">
+                <input type="AT" class="form-control" id="AT" name="AT" placeholder="artists or bands">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="CD">country/district:</label>
+              <div class="col-sm-10">
+                <input type="CD" class="form-control" id="CD" name="CD" placeholder="Using space to seperate tags">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="SC">Scene:</label>
+              <div class="col-sm-10">
+                <input type="SC" class="form-control" id="SC" name="SC" placeholder="Using space to seperate tags">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="ST">Style</label>
+              <div class="col-sm-10">
+                <input type="ST" class="form-control" id="ST" name="ST" placeholder="Using space to seperate tags">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="MD">Mood:</label>
+              <div class="col-sm-10">
+                <input type="MD" class="form-control" id="MD" name="MD" placeholder="Using space to seperate tags">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-6 col-sm-2">
+                <br/>
+                <button type="button" class="btn btn-default" id="stSub" align=center>Select</button>
+              </div>
+            </div>
+          </form>
         </div>
         <div id="ListCnt" class="tab-pane fade">
           <h3>List</h3>
@@ -93,7 +142,8 @@
           </div>
         </div>
         <div id="UpldCnt" class="tab-pane fade">
-          <h2>New track</h2>
+          <h2 align=center>New track</h2>
+          <br/>
           <form role="form" id="newSong">
             <div class="form-inline">
               <label for="NM">Name:</label>
