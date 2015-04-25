@@ -11,7 +11,6 @@ $.fn.serializeObject = function() { // extract data from form to json
       o[this.name] = this.value || '';
     }
   });
-  alert(JSON.stringify(o));
   return o;
 };
 
@@ -34,7 +33,7 @@ function chopTags(str, arr) {
 $(function() {
   $('#nsSub').click(function() {
     var temp = $('#newSong').serializeObject();
-    alert(JSON.stringify(temp));
+    //alert(JSON.stringify(temp));
     var tmpCD = temp.CD;
     var tmpSC = temp.SC;
     var tmpST = temp.ST;
@@ -50,18 +49,21 @@ $(function() {
     newSong["style"] = Styleh;
     newSong["mood"] = Moodhh;
     newSong["file"] = temp.file;
+    newSong["name"] = temp.NM;
+    newSong["year"] = temp.YR;
+    newSong["artist"] = temp.AT;
 
-    alert(JSON.stringify(newSong));
-
-    /*$.post('/query', SLCT, function(Fname) {
-      var jsonHtmlTable = ConvertJsonToTable(Fname, 'jsonTable', "table table-bordered table-hover", 'Download');
-      $('#jsonTable').remove();
-      $('#tForm').append(jsonHtmlTable);
-      $('.table').dragableColumns();
-      jQuery.each(newAttr, function(i, val) {
-        $("#" + val).hide();
-      });
-    }, 'json');*/
+    //alert(JSON.stringify(newSong));
+    $.post('/add', newSong, function(res) {
+      var addRes = '';
+      if (res.state == true)
+        addRes = '<h2 id="result" align=center>Your music has been added, please enjoy it.</h2>';
+      else
+        addRes = '<h2 id="result" align=center>Sorry, music upload fail..</h2>';
+      $('#result').remove();
+      $('#ResCanvus').append(addRes);
+      $("#myTab li:eq(3) a").tab('show');
+    }, 'json');
     return false;
   });
 });

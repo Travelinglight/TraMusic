@@ -37,9 +37,9 @@
         <p>The music box you can carry with you everywhere</p>
       </div>
 
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a data-toggle="tab" href="#HomeCnt">Home</a></li>
-        <li><a data-toggle="tab" href="#SongCnt">Song</a></li>
+        <li><a data-toggle="tab" href="#TrckCnt">Track</a></li>
         <li><a data-toggle="tab" href="#ListCnt">List</a></li>
         <li><a data-toggle="tab" href="#RestCnt">Result</a></li>
         <li><a data-toggle="tab" href="#UpldCnt">Upload</a></li>
@@ -48,9 +48,39 @@
       <div class="tab-content">
         <div id="HomeCnt" class="tab-pane fade in active">
           <h1 align=center>Cuz life is beautiful</h1>
+          <h4 align=center>I was doubling over the load on my shoulders was a weight<h4>
+          <h4 align=center>I carried with me everyday<h4>
+          <h4 align=center>Crossing miles of frustrations and rivers a raging<h4>
+          <h4 align=center>Picking up stones I found along the way<h4>
+          <h4 align=center>I staggered and I stumbled down pathways of trouble I was<h4>
+          <h4 align=center>hauling those souvenirs of misery<h4>
+          <h4 align=center>And with each step taken my back was breaking Till I found the One who took it all from me<h4>
+          <h4 align=center>Down by the riverside<h4>
+          <h4 align=center>I laid my burdens down,Now I'm traveling light<h4>
+          <h4 align=center>My spirit lifted high<h4>
+          <h4 align=center>I found my freedom now,And I'm traveling light<h4>
+          <h4 align=center>Through the darkest alleys and loneliest valleys<h4>
+          <h4 align=center>I was dragging those heavy chains of doubt and fear<h4>
+          <h4 align=center>Then with the one word spoken the locks were broken<h4>
+          <h4 align=center>Now He's leading me to places Where there are no tears<h4>
+          <h4 align=center>Down by the riverside(Down by the riverside)<h4>
+          <h4 align=center>I laid my burdens down,Now I'm traveling light<h4>
+          <h4 align=center>My spirit lifted high<h4>
+          <h4 align=center>I found my freedom now and I'm traveling light<h4>
+          <h4 align=center>Down by the riverside I laid my burdens down,Now I'm traveling light<h4>
+          <h4 align=center>My spirit lifted high I found my freedom now<h4>
+          <h4 align=center>And now traveling light,down by the riverside<h4>
+          <h4 align=center>I laid my burdens down,Now I'm traveling light<h4>
+          <h4 align=center>My spirit lifted high<h4>
+          <h4 align=center>I found my freedom now,And I'm traveling light<h4>
+          <h4 align=center>Down by the riverside<h4>
+          <h4 align=center>I laid my burdens down,Now I'm traveling light<h4>
+          <h4 align=center>My spirit lifted high<h4>
+          <h4 align=center>I found my freedom now,And I'm traveling light<h4>
+          <h4 align=center>I found my freedom now<h4>
         </div>
-        <div id="SongCnt" class="tab-pane fade">
-          <h3>Song</h3>
+        <div id="TrckCnt" class="tab-pane fade">
+          <h3>Select Tracks</h3>
           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div id="ListCnt" class="tab-pane fade">
@@ -58,12 +88,22 @@
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
         <div id="RestCnt" class="tab-pane fade">
-          <h3>Result</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          <div id="ResCanvus">
+            <h2 id="result" align=center>haha</h2>
+          </div>
         </div>
         <div id="UpldCnt" class="tab-pane fade">
-          <h2>New song</h2>
+          <h2>New track</h2>
           <form role="form" id="newSong">
+            <div class="form-inline">
+              <label for="NM">Name:</label>
+              <input type="NM" class="form-control" id="NM" name="NM" placeholder="track name">
+              <label for="YR">year:</label>
+              <input type="YR" class="form-control" id="YR" name="YR" placeholder="publish year">
+              <label for="AT">artist:</label>
+              <input type="AT" class="form-control" id="AT" name="AT" placeholder="publish year">
+            </div>
+            <br/>
             <div class="form-group">
               <label for="CD">Country/district:</label>
               <input type="CD" class="form-control" id="CD" name="CD" placeholder="Using space to seperate tags">
@@ -81,7 +121,7 @@
               <input type="MD" class="form-control" id="MD" name="MD" placeholder="Using space to seperate tags">
             </div>
             <div class="form-group">
-              <input id="input-1" type="file" class="file" name="file">
+              <input type="file" class="form-control" id="file" name="file">
             </div>
             <button type="button" class="btn btn-default" id="nsSub">Upload</button>
           </form>
