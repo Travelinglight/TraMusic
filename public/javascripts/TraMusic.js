@@ -207,7 +207,7 @@ $(function() {  // add new song form submit
     newSong["year"] = temp.YR;
     newSong["artist"] = temp.AT;
 
-    alert(JSON.stringify(newSong));
+    //alert(JSON.stringify(newSong));
     $.post('/add', newSong, function(res) {
       var addRes = '';
       if (res.state == true)

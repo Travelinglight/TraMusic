@@ -33,31 +33,44 @@ app.get('*.*', function(req, res) {
 });
 
 app.post('/add', function(req, res) {
+  console.log(req.body);
   var queryString = "select max(id) from track where true;";
   dbclient.query(queryString, function(err, results, fields) {
     var queryString = "INSERT INTO track (id, name, country, scene, style, mood, artist, year, file) VALUES(";
     queryString += (results[0]["max(id)"] + 1).toString() + ", ";
     queryString += '\"' + req.body["name"] + '\", ';
     queryString += '\"';
-    for (var i = 0; i < req.body["district"].length; i++)
-      queryString += req.body["district"][i] + ';';
+    if (typeof(req.body["district"]) != 'undefined') {
+      for (var i = 0; i < req.body["district"].length; i++)
+        queryString += req.body["district"][i] + ';';
+    }
     queryString += '\", ';
     queryString += '\"';
-    for (var i = 0; i < req.body["scene"].length; i++)
-      queryString += req.body["scene"][i] + ';';
+    if (typeof(req.body["scene"]) != 'undefined') {
+      for (var i = 0; i < req.body["scene"].length; i++)
+        queryString += req.body["scene"][i] + ';';
+    }
     queryString += '\", ';
     queryString += '\"';
-    for (var i = 0; i < req.body["style"].length; i++)
-      queryString += req.body["style"][i] + ';';
+    if (typeof(req.body["style"]) != 'undefined') {
+      for (var i = 0; i < req.body["style"].length; i++)
+        queryString += req.body["style"][i] + ';';
+    }
     queryString += '\", ';
     queryString += '\"';
-    for (var i = 0; i < req.body["mood"].length; i++)
-      queryString += req.body["mood"][i] + ';';
+    if (typeof(req.body["mood"]) != 'undefined') {
+      for (var i = 0; i < req.body["mood"].length; i++)
+        queryString += req.body["mood"][i] + ';';
+    }
     queryString += '\", ';
     queryString += '\"' + req.body["artist"] + '\", ';
-    queryString += req.body["year"].toString() + ", ";
+    if (typeof(req.body["year"]) != 'undefined')
+      queryString += req.body["year"].toString() + ", ";
+    else
+      queryString += '0';
     queryString += '\"' + req.body["file"] + '\");';
 
+    console.log(queryString);
     dbclient.query(queryString, function(err, results, fields) {
       if (err)
         res.json({"state":false});
@@ -78,21 +91,21 @@ app.post('/sltTrack', function(req, res) {
       queryString += ' and ';
     else
       flag = 1;
-    queryString += 'name="%' + req.body['name'] + '%"';
+    queryString += 'name REGEXP "' + req.body['name'] + '"';
   }
   if (req.body['year'] != '') {
     if (flag == 1)
       queryString += ' and ';
     else
       flag = 1;
-    queryString += 'year=' + req.body['year'];
+    queryString += 'year = ' + req.body['year'];
   }
   if (req.body['artist'] != '') {
     if (flag == 1)
       queryString += ' and ';
     else
       flag = 1;
-      queryString += 'artist="%' + req.body['artist'] + '%"';
+      queryString += 'artist REGEXP ""' + req.body['artist'] + '"';
   }
 
   if (req.body.hasOwnProperty("district")) {
@@ -132,6 +145,7 @@ app.post('/sltTrack', function(req, res) {
     }
   }
   queryString += ';';
+  console.log(queryString);
   dbclient.query(queryString, function(err, results, fields) {
     if (err) {
       res.send({});
