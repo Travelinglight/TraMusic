@@ -107,7 +107,6 @@ app.post('/sltTrack', function(req, res) {
       flag = 1;
       queryString += 'artist REGEXP ""' + req.body['artist'] + '"';
   }
-
   if (req.body.hasOwnProperty("district")) {
     for (var i = 0; i < req.body['district'].length; i++) {
       if (flag == 1)
@@ -144,6 +143,8 @@ app.post('/sltTrack', function(req, res) {
       queryString += 'mood REGEXP "' + req.body['mood'][i] + '"';
     }
   }
+  if (!flag)
+    queryString += "true";
   queryString += ';';
   console.log(queryString);
   dbclient.query(queryString, function(err, results, fields) {
